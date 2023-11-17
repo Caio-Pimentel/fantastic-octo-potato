@@ -1,0 +1,76 @@
+// OPÇÃO 2 - Faça um programa/jogo que gere um número aleatório entre 1 e 100. 
+// O usuário deverá ter 10 tentativas no máximo para acertar o número gerado. 
+// Caso o chute do usuário seja maior do que o número gerado, apresentar a mensagem " chutou alto".
+// Caso contrário, apresente a mensagem "chutou baixo!".
+// Se o usuário acertar, mostre a ele a mensagem "acertou, parabéns!" e a quantidade de tentativas,
+// se não acertar mostre a mensagem "".
+//- Menu -
+// 1-	Jogar 
+// 2-	Sair 
+// 3-	Créditos
+
+programa {
+  inclua biblioteca Util
+
+  funcao inicio() {
+    // Variável: menu (para escolher 1jogar, 2sair ou 3crédito)
+    // Variável: premio (o número sorteado pelo programa)
+    // Variável: chute (o número digitado pelo usuário)
+    // Variável: tentativa (o número de tentatívas até 10)
+    inteiro menu=0, premio, chute, tentativa=0
+    
+    // Função para sortear o premio:
+    premio=Util.sorteia(1,100)
+    escreva(premio)
+
+// Função para o Menu:
+          // O faça,vai fazer com que o Menu se repita até o usuário digitar um valor válido;
+          faca{
+    escreva(" - Menu -\n1 -	Jogar \n2 -	Sair \n3 -	Créditos\n")
+    leia(menu)
+    limpa()
+           }enquanto(menu>3)
+
+    escolha(menu){  
+    caso 1:  
+           // Função do jogo:
+           // Tentativa++ vai garantir que sejam 10 tentativas;
+           //
+           faca
+           {
+            tentativa++
+            escreva("\nDigite um número: ")
+            leia(chute)
+            // O que não é menor, nem maior, é igual;
+                 se (chute < premio)   
+                {  
+                 escreva("\nChutou Baixo!!\n")
+                 }  
+                  senao se (chute > premio)  
+                {  
+                  escreva("\nChutou Alto!!\n")  
+                 }  
+                  senao 
+                {  
+                  escreva("\nAcertou!!\n")
+                  pare 
+                }  
+           } enquanto(tentativa<10)
+           //Mensagem do fim das tentativas;
+           se (tentativa==10){
+           escreva("\nGame Over!!!")
+           }
+    pare
+
+    caso 2:  
+       limpa()
+        escreva("Obrigado por não jogar!") 
+    pare
+    
+    caso 3:  
+        limpa()
+        escreva(" - Projeto para nota da AP2\n - Algorítimos e lógica de programação\n - Prof. Gerhrad Saboia")
+    pare
+    }
+  }
+}
