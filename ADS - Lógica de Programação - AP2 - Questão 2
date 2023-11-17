@@ -52,7 +52,7 @@ programa {
                  }  
                   senao 
                 {  
-                  escreva("\nAcertou!!\n")
+                  escreva("\nAcertou na ", tentativa, "ª tentativa, Parabéns!!\n")
                   pare 
                 }  
            } enquanto(tentativa<10)
